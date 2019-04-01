@@ -1,15 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ThemeModule } from './@theme/theme.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+
+    ThemeModule.forRoot(),
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
